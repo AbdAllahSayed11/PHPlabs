@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            text-align: center;
+            border: solid rgb(209, 161, 120) 150px;
+         
+        }
+
+        .A{
+         border-radius: 20px;   
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <a href="build.html" target="_blank"> build</a> <br>
+    <a href="index.html" title="go to index html page">index</a> -->
+
+
+
+    <div class="A" style="text-align: center; background-color: antiquewhite ;border: solid wheat;">
+        <form action="index.php" method="POST" enctype="multipart/form-data" >
+            <h1>Enter your information</h1>
+            <br>
+            <input type="hidden" id="uID" name="user id">
+            <label for="Fname">First Name :</label>
+            <input type="text" id="Fname" placeholder="Your first Name" name="firstname"  autofocus=""  >
+            <br><br>
+            <label for="Lname">Last Name :</label>
+            <input type="text" id="Lname" placeholder="your last Name" name="lastname"  >
+            <hr><br>
+            <!-- <label for="email">E-mail :</label>
+            <input type="email" name="email" id="email" placeholder="your mail" required>
+            <hr><br>
+            <label for="Birth Date"><b> Birth Date: </b></label>
+            <input type="date" name="Birth Date" id="Birth Date"> -->
+            <label for="username">username :</label>
+            <input type="text" id="username" placeholder="your username" name="username" >
+            <br>
+            <br>
+            <label for="pass">password : </label>
+            <input type="password" name="pass" id="pass" placeholder="write complix password" minlength="11"
+                maxlength="20">
+            <br><br>
+            <label for="repeat-password">Repeat Password:</label>
+            <input type="password" id="repeat-password" name="repeat-password" placeholder="write the same password"
+                   title="Passwords must match">
+            <br>
+            <!-- <label for="pic">Your picture</label>
+            <input type="file" id="pic" name="user pic">
+            <br> -->
+            
+            <!-- <label for="r">Are you not rebot </label>
+            <input type="checkbox" name="" id="r"> -->
+
+            <div class="AA">
+                <label for="Country">choose your <mark>Country</mark> </label>
+                <br>
+                <select name="Country" id="Country">
+                    <optgroup label="Africa">
+                        <option value="a1">Egypt</option>
+                        <option value="a2">Tunis</option>
+                        <option value="a3">Mail</option>
+                    </optgroup>
+                    <optgroup label=" Europ">
+                        <option value="b1">Spain</option>
+                        <option value="b2">UK</option>
+                        <option value="b3">France</option>
+                    </optgroup>
+                </select>
+            </div>
+            <hr>
+            <fieldset>
+                <legend>Gender</legend>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="male" id="male" ><br>
+    
+                <label for="female">Female</label>
+                <input type="radio" name="gender" value="female" id="female" ><br>
+            </fieldset><br>
+            <hr>
+            <div>
+                <h3> Skills </h3>
+                <label for="pro">PHP</label>
+                <input type="checkbox" id="pro" name="skill_1" value="php">
+
+                <label for="JS"> JS </label>
+                <input type="checkbox" id="JS" name="skill_2" value="js">
+
+                <label for="MySql">MYSQL</label>
+                <input type="checkbox" id="MySql" name="skill_3" value="MYSQL">
+
+
+                <label for="Postgrees">Postgrees</label>
+                <input type="checkbox" id="Postgrees" name="skill_4" value="Postgrees">
+            </div><br>
+            <hr>
+
+            <label for="address">
+                <h4>Write your address </h4>
+            </label>
+            <textarea name="address" id="address">
+
+                </textarea>
+            <br>
+            <hr>
+
+            <label for="dep">Department</label>
+            <input type="text" id="dep" placeholder="Open source" name="Department" >
+            <hr><br>
+
+
+            <hr>
+
+            <!-- <a href="about.html">
+            <label for="terms">I Agree</label></a> -->
+            <input type="checkbox" id="terms"   >
+            <label for="terms">
+                <a href="terms-and-conditions.html" target="_blank">I agree to the terms and conditions</a></label>
+            <hr>
+            <!-- <label for="gpa">Enter your GPA : </label>
+            <br>
+            <input id="gpa" type="number">
+            <hr>
+             -->
+
+
+
+             <div class="captcha-container">
+                <span class="captcha-text" id="captcha-text"></span>
+            </div>
+            <div>
+                <label for="captcha-input">Enter the text above:</label>
+                <input type="text" id="captcha-input" class="captcha-input" name="captcha"  >
+            </div>
+        
+
+
+            <input type="submit" value="Submit">
+            &nbsp;&nbsp;&nbsp;
+            <input type="reset" value="reset">
+            <hr><br>
+            <p><i>thank you so much </i></p>
+
+
+        </form>
+
+    </div>
+
+
+    <script>
+        // Generate a random CAPTCHA string
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let captcha = '';
+            for (let i = 0; i < 6; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('captcha-text').textContent = captcha;
+            return captcha;
+        }
+
+        // Store the correct captcha value
+        const correctCaptcha = generateCaptcha();
+
+        // Form submission event handler
+        document.getElementById('captcha-form').onsubmit = function(event) {
+            const userCaptcha = document.getElementById('captcha-input').value;
+            if (userCaptcha !== correctCaptcha) {
+                event.preventDefault();
+                alert('Incorrect CAPTCHA. Please try again.');
+                generateCaptcha();  // Generate new CAPTCHA
+            }
+        };
+    </script>
+</body>
+
+</html> 
