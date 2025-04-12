@@ -2,8 +2,8 @@
 class Config {
     private $host = 'localhost';
     private $dbname = 'cafe';
-    private $username = 'root';
-    private $password = '!1Abody123';
+    private $username = '';
+    private $password = '';
     public $pdo;
 
     public function __construct() {
