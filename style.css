@@ -1,0 +1,194 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Lighter background */
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px; /* Slightly more rounded */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 26px; /* Slightly larger heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Larger gap for better spacing */
+}
+
+label {
+    font-weight: bold;
+    color: #444;
+    font-size: 16px; /* Slightly larger text for labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly more rounded */
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+input[type="file"]:focus {
+    border-color: #4caf50; /* Greenish focus border */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Focus shadow for better visibility */
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 25px;
+    background-color: #4caf50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Fully rounded button */
+    font-size: 18px; /* Larger button text */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #388e3c; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+input[type="reset"] {
+    background-color: #bdbdbd; /* Grey reset button */
+}
+
+input[type="reset"]:hover {
+    background-color: #9e9e9e;
+}
+
+.show-customer-btn {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.show-customer-btn a {
+    text-decoration: none;
+    color: white;
+    background-color: #2196f3; /* Blue color */
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.show-customer-btn a:hover {
+    background-color: #1976d2; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+.error {
+    background-color: #ffe0e0; /* Soft red background for error */
+    color: #d32f2f; /* Red text color */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px; /* Slightly larger font */
+}
+
+.success {
+    background-color: #e8f5e9; /* Light green background for success */
+    color: #388e3c; /* Green text color */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px; /* Slightly larger font */
+}
+
+.navbar {
+    background: linear-gradient(135deg, #54466d, #ff9800); /* Purple to Orange gradient */
+    padding: 20px 30px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px; /* More rounded navbar links */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* White hover effect */
+    transform: translateY(-2px);
+}
+
+.navbar h2 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar img {
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+}
+
+.navbar img:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-size: 18px;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ddd; /* Border around images */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
